@@ -9,7 +9,7 @@ class TimeSuite:
     """
     def setup(self):
         self.d = {}
-        for x in range(500):
+        for x in range(1_000):
             self.d[x] = None
 
     def time_keys(self):
@@ -28,4 +28,4 @@ class TimeSuite:
 
 class MemSuite:
     def mem_list(self):
-        return [0] * 256
+        return [0] * 512

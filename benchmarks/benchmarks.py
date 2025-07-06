@@ -1,10 +1,6 @@
 # Write the benchmarking functions here.
 # See "Writing benchmarks" in the asv docs for more information.
 
-
-from asv_test import do_something
-
-
 class TimeSuite:
     """
     An example benchmark that times the performance of various kinds
@@ -31,6 +27,7 @@ class TimeSuite:
 
 class TimeSomething:
     def time_something():
+        from asv_test import do_something
         do_something()
 
 

@@ -2,6 +2,9 @@
 # See "Writing benchmarks" in the asv docs for more information.
 
 
+from asv_test import do_something
+
+
 class TimeSuite:
     """
     An example benchmark that times the performance of various kinds
@@ -9,7 +12,7 @@ class TimeSuite:
     """
     def setup(self):
         self.d = {}
-        for x in range(1_000):
+        for x in range(1_500):
             self.d[x] = None
 
     def time_keys(self):
@@ -22,10 +25,15 @@ class TimeSuite:
 
     def time_range(self):
         d = self.d
-        for key in range(500):
+        for key in range(1500):
             d[key]
+
+
+class TimeSomething:
+    def time_something():
+        do_something()
 
 
 class MemSuite:
     def mem_list(self):
-        return [0] * 512
+        return [0] * 1024
